@@ -13,6 +13,7 @@ return(
     as="img"
     src={src}
     alt={alt}
+    {...props}
   />
 )
 

@@ -4,6 +4,7 @@ import Text from "@src/components/Text/Text";
 import React from 'react';
 import Image from "@src/components/Image/Image";
 import { useTheme } from "styled-components";
+import Link from "@src/components/Link/Link";
 
 interface FeedProps {
   children: React.ReactNode;
@@ -23,11 +24,7 @@ export default function Feed({ children }){
 Feed.Header = () => {
   const theme = useTheme();
   return (
-    <Box
-      styleSheet={{
-        color: theme.colors.negative.x500, // theme
-      }}
-    >
+    <Box>
       <Image
         styleSheet={{
           width: '128px',
@@ -37,7 +34,9 @@ Feed.Header = () => {
         src="https://github.com/luizedumachado.png"
         alt="Imagem de perfil do Luiz Machado"
       />
-      <Icon name="youtube" />
+      <Link href="https://www.youtube.com/MyTorresmo">
+        <Icon name="youtube" />
+      </Link>
       <Icon name="twitter" />
       <Icon name="instagram" />
       <Icon name="github" />
