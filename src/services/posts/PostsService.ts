@@ -9,6 +9,7 @@ export interface Post {
     excerpt: string;
     tags: string[];
   }
+  image?: string;
   slug: string; // Post ID
   title: string;
   content: string;
@@ -25,11 +26,12 @@ export default function PostsService() {
         const { data, content} = matter(postFile);
         const post: Post = {
           metadata: {
-            date: data.date.toString(),
+            date: new Date(data.date).toISOString(),
             excerpt: data.excerpt,
             tags: data.tags,
             url: data.url,
           },
+          image: data.image || "",
           title: data.title,
           slug: postFileName.replace(".md", ""),
           content,

@@ -7,6 +7,8 @@ import Link from "@src/components/Link/Link";
 import Button from "@src/components/Button/Button";
 import { useTheme } from "@src/theme/ThemeProvider";
 import { useTemplateConfig } from "@src/services/template/TemplateConfigContext";
+import type { Post } from '@src/services/posts/PostsService';
+import { FeedPost } from './patterns/FeedPost';
 
 interface FeedProps {
   children: React.ReactNode;
@@ -119,12 +121,31 @@ Feed.Header = () => {
   )
 }
 
-Feed.Posts = () => {
+interface FeedPostsProps{ 
+  posts: Post[];
+}
+
+Feed.Posts = ({ posts }: FeedPostsProps) => {
   return (
     <Box>
-      <Text>
-        Feed Posts
+      <Text variant="heading3" styleSheet={{marginBottom: "27px"}}>
+        Últimas Atualizações
       </Text>
+      {posts.map(({ slug, title, metadata, image }) => {
+        const { date, excerpt, url, tags} = metadata;
+        return (
+          <FeedPost 
+            key={slug}
+            title={title}
+            date={date}
+            excerpt={excerpt}
+            tags={tags}
+            url={url}
+            image={image}
+          >
+          </FeedPost>
+        )
+      })}
     </Box>
   )
 }
