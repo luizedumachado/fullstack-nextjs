@@ -1,0 +1,11 @@
+site:
+  title: "Aline Glatz Social Media"
+  description: "Bem vindo a minha timeline pessoal"
+personal:
+  name: "Aline Glatz"
+  avatar: "https://yt3.googleusercontent.com/1amZ6RZOOoxjcWLoONQW9K2bfgVFBnLNWd67a7NYxUuuL4tCEYO5P6RnhH6JYBHYdNmG2uk=s160-c-k-c0x00ffffff-no-rj"
+  socialNetworks:
+    youtube: "https://www.youtube.com/@alineglatz"
+    instagram: "https://www.instagram.com/alineglatz"
+    github: "https://www.github.com/luizedumachado"
+    linkedin: "https://www.linkedin.com/in/alinebarbosaglatz/"
